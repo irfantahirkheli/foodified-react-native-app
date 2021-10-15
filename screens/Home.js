@@ -8,9 +8,7 @@ import RestaurantItems, {
 	localRestaurants,
 } from '../components/Home/RestaurantItems';
 import SearchBar from '../components/Home/SearchBar';
-
-const YELP_API_KEY =
-	'mI1m2qmlJjSwjaX9DS4nnrejtV6-cnLvuxY0SSLcsxz_ZsKOXyxYTJYNX3A76ZwrR0qGhH_z8BrgiHjCMn-40lZVhvom4uWjZnzGavxyvjIMO1UyV3TgUdXKMjQ9W3Yx';
+import { YELP_API_KEY } from '@env';
 
 export default function Home({ navigation }) {
 	const [restaurantData, setRestaurantData] = useState(localRestaurants);
@@ -33,9 +31,7 @@ export default function Home({ navigation }) {
 			.then((res) => res.json())
 			.then((data) => {
 				data.businesses.map((i, ind) => {
-					
 					console.log(i.transactions.length);
-
 				});
 				var restaurants = data.businesses.filter((d) =>
 					d.transactions.includes(activeTab.toLowerCase())

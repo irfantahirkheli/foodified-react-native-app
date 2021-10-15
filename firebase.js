@@ -1,4 +1,12 @@
 import firebase from 'firebase';
+import {
+	FIREBASE_API_KEY,
+	FIRBASE_AUTH_DOMAIN,
+	FIREBASE_PROJECT_ID,
+	FIREBASE_StorageBucket,
+	FIREBASE_MessagingSenderId,
+	FIREBASE_APP_ID,
+} from '@env';
 
 import { initializeApp } from 'firebase/app';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -6,12 +14,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: 'AIzaSyCEA200lForZUI6KDtWoE4jVvcIkmtT7LA',
-	authDomain: 'food-republic-project.firebaseapp.com',
-	projectId: 'food-republic-project',
-	storageBucket: 'food-republic-project.appspot.com',
-	messagingSenderId: '691845033558',
-	appId: '1:691845033558:web:cd23bd7e9de7f1595015f7',
+	apiKey: FIREBASE_API_KEY,
+	authDomain: FIRBASE_AUTH_DOMAIN,
+	projectId: FIREBASE_PROJECT_ID,
+	storageBucket: FIREBASE_StorageBucket,
+	messagingSenderId: FIREBASE_MessagingSenderId,
+	appId: FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

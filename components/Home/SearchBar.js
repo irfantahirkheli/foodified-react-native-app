@@ -3,9 +3,9 @@ import { View, Text, ScrollView } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import { GOOGLE_PLACES_API_KEY } from '@env';
 export default function SearchBar(props) {
-  return (
+	return (
 		<View
 			style={{
 				marginTop: 10,
@@ -17,10 +17,10 @@ export default function SearchBar(props) {
 				onPress={(data, details = null) => {
 					// 'details' is provided when fetchDetails = true
 					//console.log(data, details);
-          props.cityHandler(data.description.split(',')[0])
+					props.cityHandler(data.description.split(',')[0]);
 				}}
 				query={{
-					key: 'AIzaSyCNioz3jaOlYuBQ4KHPnKqHtVYw7Landjw',
+					key: GOOGLE_PLACES_API_KEY,
 					language: 'en',
 				}}
 				onFail={(error) => console.error(error)}
